@@ -1,0 +1,34 @@
+<section class="container-fluid p-1 p-lg-4 cont">
+  <h1 class="title">{{"PROFILE.title" |translate}}</h1>
+  <div class="cont__profile">
+    <div class="cont__profile__card cont__profile__card--1 shadow">
+      <div class="cont__profile__card__text">
+        <h3 class="text-center subtitle">{{"PROFILE.data.title" |translate}}</h3>
+        <p class=""><strong>{{"PROFILE.data.item1" |translate}} : </strong> {{_sctr.user?.name}}</p>
+        <p class=""><strong>{{"PROFILE.data.item2" |translate}} : </strong> {{_sctr.user?.lastname}}</p>
+        <p class=""><strong>{{"PROFILE.data.item3" |translate}} : </strong> {{_sctr.user?.email}}</p>
+        <p class=""><strong>{{"PROFILE.data.item4" |translate}} : </strong> {{_sctr.user?.password}}</p>
+        <p class=""><strong>{{"PROFILE.data.item5" |translate}} : </strong> {{_sctr.user?.role}}</p>
+      </div>
+      <div class="cont__profile__card__btn">
+        <button mat-raised-button class="cont__profile__card__btn--1" (click)="_sctr.editar(_sctr.user)" data-bs-toggle="modal"data-bs-target="#ModalUser">
+          <mat-icon class="mat-18">edit</mat-icon>{{"PROFILE.data.button.btn1" |translate}}</button>
+        <button mat-raised-button class="cont__profile__card__btn--2" (click)="eliminarcuenta()">
+          <mat-icon class="mat-18">close</mat-icon>{{"PROFILE.data.button.btn2" |translate}}</button>
+      </div>
+    </div>
+    <div class="cont__profile__card cont__profile__card--2 shadow">
+      <div class="img">
+        <img src="assets/icons/logo_san_jose.png" class="card-img-top" alt="">
+      </div>
+      <h2>{{"PROFILE.ins" |translate}}</h2>
+    </div>
+  </div>
+</section>
+
+<app-form></app-form>
+
+<ng-template #load>
+  <app-loading></app-loading>
+</ng-template>
+

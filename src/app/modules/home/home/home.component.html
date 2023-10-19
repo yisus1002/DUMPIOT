@@ -1,0 +1,25 @@
+<div class="main-div" id="cont" #cont>
+
+  <mat-toolbar class="app-header shadow-sm">
+    <button class="menu" mat-icon-button (click)="togg=!togg;" >
+      <mat-icon>{{ togg ? 'menu' : 'close' }}</mat-icon>
+    </button>
+    <a class="navbar-brand mx-2" [routerLink]="['/']">
+      <img src="assets/icons/logo_san_jose.png" class="img" alt="iot" width="50" height="50">
+  </a>
+    <span class="spacer"></span>
+    <app-avatar></app-avatar>
+  </mat-toolbar>
+  <mat-drawer-container class="app-sidenav" >
+    <mat-drawer [class.ocultar-drawer]="togg"  #drawer [mode]="mod" opened="true" class="sidenav" fixedInViewport="false">
+      <app-navbar></app-navbar>
+    </mat-drawer>
+    <mat-drawer-content>
+      <router-outlet></router-outlet>
+      <app-footer></app-footer>
+    </mat-drawer-content>
+  </mat-drawer-container>
+
+
+</div>
+

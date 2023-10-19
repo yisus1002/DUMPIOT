@@ -1,0 +1,78 @@
+@use '../../../../../../../assets/styles/variables' as variables;
+@use '../../../../../../../assets/styles/mixins' as mixins;
+
+.cont{
+  &__profile{
+    gap: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    @include  mixins.tablet(){
+    }
+    @include  mixins.desktop(){
+
+    }
+    @include  mixins.desktopx(){
+      justify-content: space-evenly;
+      flex-direction: row;
+      align-items: flex-start;
+
+    }
+    &__card{
+      overflow: hidden;
+      background-color: variables.color(white);
+      border-radius: 20px;
+      padding: variables.$padding*2;
+      &--1{
+        @include  mixins.tablet(){
+        }
+        @include  mixins.desktop(){
+
+        }
+        @include  mixins.desktopx(){
+          min-width:  600px;
+
+        }
+      }
+      &--2{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @include  mixins.tablet(){
+        }
+        @include  mixins.desktop(){
+
+        }
+        @include  mixins.desktopx(){
+          min-width:  200px;
+
+        }
+      }
+      &__text{
+        display: flex;
+        flex-direction: column;
+       >p{
+        // background-color: red;
+        font-size: 18px;
+        border-bottom: solid 1px rgb(196, 196, 196);
+        color: variables.color(sky-blue);
+
+       }
+      }
+      &__btn{
+        display: flex;
+        gap: 20px;
+        &--1{
+          color:variables.color(sky-blue)!important;
+        }
+        &--2{
+          color:variables.color(red)!important;
+        }
+      }
+    }
+  }
+}
+.subtitle, h2{
+  font-size: 22px;
+  color: variables.color(blue-light)
+}

@@ -1,0 +1,106 @@
+@use "../../../../../../../assets/styles/variables" as variables;
+@use "../../../../../../../assets/styles/mixins" as mixins;
+
+.iot{
+  font-weight: 600;
+  color: variables.color(yellow);
+}
+.text{
+  user-select: none;
+  position: relative;
+  background: linear-gradient(-45deg, #ff6201, #d29edf, #0d974b,#0084ff, #54e252,#e25d52);
+  background-size: 300%;
+  font-weight: 600;
+  letter-spacing: -2px;
+  font-size: 30px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:  animated_text 6s ease-in-out infinite;
+  -moz-animation:  animated_text 6s ease-in-out infinite;
+  -webkit-animation:  animated_text 6s ease-in-out infinite
+
+}
+@keyframes animated_text{
+  0% { background-position: 0px 50%;}
+  50% { background-position: 100% 50%;}
+  100% { background-position: 0px 50%;}
+
+}
+.cont_g{
+  gap: 10px; 
+  width: 100%;
+  @include  mixins.desktop(){
+    width: 35%;
+  }
+}
+.cont{
+  &__lading{
+    gap: 20px;
+    // border: solid 1px red;
+
+    @include  mixins.tablet(){
+      padding: variables.$padding*2;
+
+    }
+    @include  mixins.desktop(){
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-evenly;
+    }
+    &__card{
+      background-color: white;
+      border-radius: 20px;
+      padding: variables.$padding*2;
+      position: relative;
+      height: fit-content;
+
+      &__1{
+        margin: 0 variables.$margin;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+      }
+      &__2{
+        width: auto;
+        @include  mixins.tablet(){
+        }
+        @include  mixins.desktop(){
+          min-width: 400px;
+        }
+        @include  mixins.desktopx(){
+          min-width: 500px;
+        }
+      }
+      // cont__lading__card__btn--1
+      &__btn{
+        background-color: transparent;
+        color: variables.color(blue);
+        &--1{  }
+        &--2{  }
+        &--3{  }
+        &--4{
+          background-color: variables.color(white);
+          position: absolute;
+          top: -15px;
+          right: 0;
+          @include  mixins.tablet(){
+            right: -15px;
+          }
+          @include  mixins.desktop(){
+          }
+          @include  mixins.desktopx(){
+          }
+         }
+      }
+    }
+  }
+}
+
+:host ::ng-deep .sweet-alert .swal-text {
+  max-height: 400px!important; /* To be adjusted as you like */
+  overflow-y: hidden!important;
+  width: 100%!important;
+}
+

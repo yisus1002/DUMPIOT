@@ -1,0 +1,12 @@
+@use '../../../../assets/styles/variables';
+.avatar{
+  background-color: variables.color(yellow);
+}
+.mat-button{
+  scale: .7;
+  width: 60px;
+  height:60px;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  padding: 0;
+}

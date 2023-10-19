@@ -1,0 +1,5 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item" *ngFor="let ruta of rutas">
+    <a class="nav-link" [routerLink]="[ruta.path]"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ruta.name}}</a>
+  </li>
+</ul>

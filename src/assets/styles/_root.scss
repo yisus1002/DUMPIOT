@@ -1,0 +1,127 @@
+@use "variables.scss" as variables;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  // font-size: 10px;
+  font-family: 'Poppins', sans-serif;
+  h1, h2, h3, h4, h5 {
+      font-family: 'Poppins', sans-serif !important;
+  }
+  //font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+a{
+  text-decoration: none;
+}
+ul, li {
+  list-style: none;
+}
+
+html, body { height: 100%; }
+body{
+  // background-color: red;
+}
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+::-webkit-scrollbar{
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+  background: linear-gradient(
+    to bottom,
+    variables.color(coffe),
+    variables.color(green)
+  );
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track{
+  background: variables.color(sky-blue);
+}
+
+.toast-center {
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.toast-top-right {
+  top: 12px;
+  right: 12px;
+}
+.modal-backdrop {
+  --bs-backdrop-bg: rgba(136, 29, 29, 0);
+  --bs-backdrop-opacity: 1!important;
+  z-index: -2!important;
+  opacity: 1!important;
+}
+mat-form-field{
+  margin: 2px;
+}z
+.modal{
+  z-index: 0!important;
+}
+.scale-in-center {
+	-webkit-animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.scale-up-ver-top {
+	-webkit-animation: scale-up-ver-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-ver-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+ @-webkit-keyframes scale-up-ver-top {
+  0% {
+    -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+  }
+}
+@keyframes scale-up-ver-top {
+  0% {
+    -webkit-transform: scaleY(0.4);
+            transform: scaleY(0.4);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+            transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+            transform-origin: 100% 0%;
+  }
+}
+
+ @-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}

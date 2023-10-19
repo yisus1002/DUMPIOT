@@ -1,0 +1,38 @@
+
+<section class="container-fluid p-1 p-lg-4 cont" >
+<h1 class="h1 title">{{"HOME.title" | translate}}</h1>
+<h2 class="h1 text text-center">{{"TITLE" | translate}}</h2>
+  <div class="cont__lading" *ngIf="loading; else load">
+    <div class="cont__lading__card mb-4 shadow cont_g" style="display: flex; flex-direction: column; ">
+      <div class="  ">
+        <app-time></app-time>
+        <div class="cont__lading__card__1 mt-2">
+          <button *ngIf="!activar" mat-fab class="cont__lading__card__btn cont__lading__card__btn--1" (click)="tocarTimbre()">
+            <i class="fa-solid fa-bell fa-shake"></i>
+          </button>
+          <button mat-fab class="cont__lading__card__btn cont__lading__card__btn--2" (click)="cambiarEstado()">
+            <mat-icon [ngStyle]="{'color': activar ? '#33FFCA ' : '#FFB533'}" >{{activar? 'alarm_off': 'alarm_on'}}</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="cont__lading__card cont__lading__card__2 shadow">
+      <button type="button" *ngIf="!editar" (click)="editar=!editar" mat-mini-fab class="cont__lading__card__btn cont__lading__card__btn--4" >
+        <mat-icon>edit</mat-icon>
+      </button>
+      <div class="cont__table">
+        <h3 class="text-center">{{"HOME.form.title" | translate}}</h3>
+        <app-table *ngIf="!editar; else edit" [schedule]="horari"></app-table>
+        <ng-template #edit>
+          <app-form-schedule [horari]="horari" (edit)="cancel($event)" (horariNew)="handleButtonClick($event)"></app-form-schedule>
+        </ng-template>
+
+      </div>
+    </div>
+</div>
+</section>
+
+<ng-template #load>
+  <app-loading></app-loading>
+</ng-template>
+

@@ -1,0 +1,27 @@
+$colors: (
+    blue: #006CB6,
+    red: #ff1b5c,
+    sky-blue: #1FC3F3,
+    blue-dark: #03395F,
+    blue-light: #006CB6,
+    text-white: #FFFFFF,
+    white: #FFFFFF,
+    yellow: #24c283,
+    coffe-dark: orange,
+    coffe: #ffb574,
+    green: #c517bf,
+    orange-dark: #E84829
+);
+
+$padding: 10px;
+$margin: 10px;
+
+$screen-desktopx: 1100px;
+$screen-desktop: 950px;
+$screen-tablet: 800px;
+
+$size: 30px;
+
+@function color($color-name) {
+    @return map-get($colors, $color-name);
+}

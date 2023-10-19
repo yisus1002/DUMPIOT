@@ -1,0 +1,32 @@
+@use "../../../../assets/styles/variables";
+
+.icon{
+  &--1, &--2, &--3{
+    color: variables.color(sky-blue)!important;
+  }
+  &--1{}
+  &--2{}
+  &--3{}
+}
+
+ mat-icon{
+  margin-right: 8px!important;
+}
+:host ::ng-deep mat-list{
+  padding: 8px!important;
+}
+:host ::ng-deep mat-list-item{
+  margin-top: 10px !important;
+  border-radius: 10px !important;
+  &:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.1);
+    background-color: variables.color(white);
+  }
+}
+
+:host ::ng-deep .active{
+  // background-color: red!important;
+  background-color: variables.color(white);
+  box-shadow: 0px 0px 15px -3px rgba(0,0,0,0.1)!important;
+}

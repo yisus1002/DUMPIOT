@@ -1,0 +1,40 @@
+@use '../../../../../../../assets/styles/variables' as variables;
+@use '../../../../../../../assets/styles/mixins' as mixins;
+
+@font-face {
+  font-family: myFont;
+  src: url(../../../../../../../assets/font/digital-7.ttf);
+}
+
+
+.clock {
+  // border: solid 1px red;
+  margin: 0 auto;
+  padding: variables.$padding*2;
+  border-radius: 20px;
+  width: 200px;
+  max-width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: variables.color(white);
+  // box-shadow: inset 0px 0px 33px -4px rgba(0,0,0,0.1);
+  &__time{
+    margin: 0 auto;
+    color: #17D4FE;
+    font-size: 30px;
+    font-weight: 400;
+    font-family: myFont;
+    letter-spacing: 4px;
+    // border: solid 1px red;
+    // line-height: calc(100% - 12px);
+
+  }
+
+}
+#chartdiv {
+  margin: 0 auto;
+  width: 100%;
+  height: 300px;
+  // max-width: auto;
+}

@@ -1,0 +1,8 @@
+<button class="avatar shadow-sm"  mat-mini-fab
+        [matMenuTriggerFor]="menu">
+        <mat-icon>person</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button routerLinkActive="active"  [routerLink]="['/profile']" mat-menu-item>{{"NABVAR.item4" |translate}}</button>
+  <button mat-menu-item (click)="exit()">{{"NABVAR.item5" |translate}}</button>
+</mat-menu>

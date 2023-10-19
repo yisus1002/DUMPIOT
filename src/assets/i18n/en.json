@@ -1,0 +1,136 @@
+{
+  "TITLE":"IoTBell",
+  "NAVAR":{
+    "item1":"Home",
+    "item2":"Manage users",
+    "item3":"Log",
+    "item4":"Profile",
+    "item5":"Exit"
+  },
+  "LOGIN":{
+    "title":"Welcome",
+    "FORM":{
+      "title":"IE José Puche",
+      "input1":"Enter your email",
+      "input2":"Enter your password",
+      "button":{
+        "btn1":"Login"
+      },
+      "alert":{
+        "alert1":"Invalid email",
+        "alert2":"Invalid password"
+      }
+    }
+  },
+  "HOME":{
+    "title":"Control Panel",
+    "form":{
+      "title":"Scheduled hours",
+      "button":{
+        "btn1":"Save",
+        "btn2":"Cancel",
+        "btn3":"Add time"
+      },
+      "table":{
+        "section1":{
+          "title":"Time"
+        },
+        "section2":{
+          "title":"Type",
+          "input":"Select a type"
+        },
+        "section3":{
+          "title":"It will ring",
+          "input":"How many times will it ring?"
+        },
+        "section4":{
+          "title":""
+        }
+      }
+    }
+  },
+  "USER":{
+    "title":"Allowed users",
+    "FORM":{
+      "item1":"Filter"
+    },
+    "inf":"Not found",
+    "button":{
+      "btn1":"Add user"
+    },
+    "table":{
+      "title1":"Names",
+      "title2":"Surname",
+      "title3":"Role",
+      "title4":"Mail",
+      "title5":"Password",
+      "title6":"Options"
+    }
+  },
+  "RECORD":{
+    "title":"Registration",
+    "FORM":{
+      "title":"Filter",
+      "input1":"Select the date",
+      "button":{
+        "btn1":"Search"
+      },
+      "alert":{
+        "alert1":"Incorrect data"
+      }
+    },
+    "inf":{
+      "title":"Schedule",
+      "alert":"No records found"
+    }
+  },
+  "PROFILE":{
+    "title":"Profile",
+    "data":{
+      "title":"Data",
+      "item1":"Name",
+      "item2":"Surname",
+      "item3":"Email",
+      "item4":"Password",
+      "item5":"Role",
+      "button":{
+        "btn1":"Edit",
+        "btn2":"Delete"
+      }
+    },
+    "ins":"IE José Puche"
+  },
+  "FORM":{
+    "title":"user",
+    "input1":"Enter the name",
+    "input2":"Enter the last names",
+    "input3":"Enter an email",
+    "input4":"Select a role",
+    "input5":"Enter a password",
+    "alert":{
+      "alert1":"This field is invalid"
+    },
+    "button":{
+      "btn1":"Cancel",
+      "btn2":"Save"
+    }
+
+  },
+  "FOOTER":{
+    "SECTION1":{
+      "title":"IE JOSE DE LA CRUZ PUCHE",
+      "item1":"",
+      "item2":""
+    },
+    "SECTION2":{
+      "title":"PRODUCT",
+      "item1":"",
+      "item2":"Technical Support"
+    },
+    "SECTION3":{
+      "title":"CONTACT",
+      "item1":"",
+      "item2":"Cra. 1A #89-31, Monteria, Cordoba"
+    }
+  }
+}

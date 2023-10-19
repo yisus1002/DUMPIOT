@@ -1,0 +1,50 @@
+<section class="container p-1 p-lg-4">
+  <div class="filtro shadow" >
+    <h3 class="filtro__title">{{"RECORD.FORM.title" | translate}}</h3>
+    <div class="filtro__cont">
+      <mat-form-field>
+        <mat-label>{{"RECORD.FORM.input1" | translate}}</mat-label>
+        <input matInput [matDatepicker]="picker" #pickerr>
+        <mat-hint *ngIf="error">{{"RECORD.FORM.alert.alert1" | translate}}</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <button type="button" class="filtro__btn" mat-raised-button
+      (click)="buscar(pickerr.value)"
+      >
+        <mat-icon>search</mat-icon>
+        {{"RECORD.FORM.button.btn1" | translate}}
+      </button>
+    </div>
+  </div>
+  <mat-accordion *ngIf="record.length>0 && mostrar; else loading" >
+
+    <mat-expansion-panel *ngFor="let record of record" (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{record?.name}}
+        </mat-panel-title>
+        <mat-panel-title>
+          {{record?.lastname}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{record?.update_date}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="">
+        <h2 class="text-center">{{"RECORD.inf.title" | translate}}</h2>
+      <app-table [schedule]="record['schedules']"></app-table>
+      </div>
+    </mat-expansion-panel>
+
+  </mat-accordion>
+  <div class="alert__reg" *ngIf="!mostrar">
+    {{"RECORD.inf.alert" | translate}}
+  </div>
+  <ng-template #loading >
+    <app-loading ></app-loading>
+  </ng-template>
+
+
+</section>

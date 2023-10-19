@@ -1,0 +1,73 @@
+@use '../../../../assets/styles/variables' as variables;
+@use '../../../../assets/styles/mixins' as mixins;
+// .sticky-footer {
+//   display: flex;
+//   flex-direction: column;
+//   height: 100%;
+// }
+
+// .sticky-footer__header,
+// .sticky-footer__footer {
+//   flex-shrink: 0;
+// }
+
+// .sticky-footer__main {
+//   flex-grow: 1;
+// }
+.spacer {
+  flex: 1 1 auto;
+}
+
+.main-div {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+
+.app-header {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.app-sidenav {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+.app-sidenav{
+  background-color: transparent;
+}
+.sidenav{
+
+}
+.img{
+  border-radius: 50%;
+  overflow: hidden;
+  scale: 1.1;
+  // border: solid 1px;
+}
+.mat-toolbar{
+	overflow: hidden;
+	background-color: variables.color(white);
+	border-radius: 0 0 20px 0px;
+    margin: 0!important;
+}
+
+@media (max-width: variables.$screen-tablet){
+
+  .ocultar-drawer{
+    visibility: hidden!important;
+    display: none!important;
+    }
+}
+@media (min-width: variables.$screen-tablet){
+  .menu{
+    display: none;
+    visibility: hidden;
+  }
+ ::ng-deep mat-drawer{
+    // background-color: red!important;
+    visibility: visible!important;
+    display: block!important;
+    }
+}

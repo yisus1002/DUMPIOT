@@ -1,0 +1,45 @@
+<div class="container-fluid h-100 bg-login" style="display: flex; align-items: center; justify-content: center;">
+  <div class="container d-flex " style="justify-content: center; margin: auto;">
+      <form
+          [formGroup]="formu"
+          (ngSubmit)="login()"
+          autocomplete="none-"
+          class="slide-in-blurred-top border-0 card p-3 rounded-4 col col-11 col-sm-10 col-md-6 shadow">
+          <div class="">
+              <img src="assets/icons/logo_san_jose.png" class="shadow col col-4 img-thumbnail" alt="">
+              <h1 class="text-center color text-shadow-drop-centerd  " style="font-weight: 900; ">{{"LOGIN.title" | translate}}</h1>
+              <p class="h5 color">{{"LOGIN.FORM.title" | translate}}</p>
+          </div>
+          <div class="d-flex" style="flex-direction: column;" >
+              <div class="example-container">
+                  <mat-form-field class="col-12" appearance="fill">
+                    <mat-label>{{"LOGIN.FORM.input1" | translate}}</mat-label>
+                    <input formControlName="email"
+                          matInput
+                           placeholder="Usuario2000@example.com">
+                    <mat-error *ngIf="emailNoValid" >{{"LOGIN.FORM.alert.alert1" | translate}}</mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="col-12" appearance="fill">
+                      <mat-label>{{"LOGIN.FORM.input2" | translate}}</mat-label>
+                      <input
+                              formControlName="password"
+                              matInput
+                              [type]="hide ? 'password' : 'text'">
+                      <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                      </button>
+                    </mat-form-field>
+                </div>
+          </div>
+          <div class="d-flex col-12 justify-content-center">
+              <button type="submit" [disabled]="_sAuth.habilitar" class="btn btn-ingresar">
+                  <span  *ngIf="_sAuth.habilitar===false" >{{"LOGIN.FORM.button.btn1" | translate}}<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
+                  </svg>
+                  </span>
+                  <mat-spinner *ngIf="_sAuth.habilitar" diameter="30"></mat-spinner>
+              </button>
+          </div>
+      </form>
+  </div>
+</div>

@@ -1,0 +1,137 @@
+{
+  "TITLE":" schoolsAlarmIOT",
+  "NABVAR":{
+    "item1":"Inicio",
+    "item2":"Control de usuarios",
+    "item3":"Registro",
+    "item4":"Perfil",
+    "item5":"Salir"
+  },
+  "LOGIN":{
+    "title":"Bienvenido",
+    "FORM":{
+      "title":"IE Aguas Negras",
+      "input1":"Ingrese su correo",
+      "input2":"Ingrese su contraseña",
+      "button":{
+        "btn1":"Ingresar"
+      },
+      "alert":{
+        "alert1":"Correo invalido",
+        "alert2":"Contraseña invalida"
+      }
+    }
+  },
+  "HOME":{
+    "title":"Dashboard",
+    "form":{
+      "title":"Horas programadas",
+      "button":{
+        "btn1":"Guardar",
+        "btn2":"Cancelar",
+        "btn3":"Agregar hora"
+      },
+      "table":{
+        "section1":{
+          "title":"Hora"
+        },
+        "section2":{
+          "title":"Tipo",
+          "input":"Seleccione un tipo"
+        },
+        "section3":{
+          "title":"Sonará",
+          "input":"¿Cuantas veces sonará?"
+        },
+        "section4":{
+          "title":""
+        }
+      }
+    }
+  },
+  "USER":{
+    "title":"Usuarios permitidos",
+    "FORM":{
+      "item1":"Filtrar"
+    },
+    "inf":"No se encontro",
+    "button":{
+      "btn1":"Agregar usuario"
+    },
+    "table":{
+      "title1":"Nombres",
+      "title2":"Apellidos",
+      "title3":"Rol",
+      "title4":"Correo",
+      "title5":"Contraseña",
+      "title6":"Opciones"
+    }
+  },
+  "RECORD":{
+    "title":"Registro",
+    "FORM":{
+      "title":"Filtro",
+      "input1":"Seleccione la fecha",
+      "button":{
+        "btn1":"Buscar"
+      },
+      "alert":{
+        "alert1":"Dato incorrecto"
+      }
+    },
+    "inf":{
+      "title":"Horario",
+      "alert":"No se encontrarón registros"
+    }
+  },
+  "PROFILE":{
+    "title":"Perfil",
+    "data":{
+      "title":"Datos",
+      "item1":"Nombre",
+      "item2":"Apellidos",
+      "item3":"Email",
+      "item4":"Password",
+      "item5":"Rol",
+      "button":{
+        "btn1":"Editar",
+        "btn2":"Eliminar"
+      }
+    },
+    "ins":"IE Aguas Negras"
+  },
+  "FORM":{
+    "title":"usuario",
+    "input1":"Ingrese el nombre",
+    "input2":"Ingrese los apellidos",
+    "input3":"Ingrese un correo",
+    "input4":"Seleccione un rol",
+    "input5":"Ingrese una contraseña",
+    "alert":{
+      "alert1":"Este campo es invalido"
+    },
+    "button":{
+      "btn1":"Cancelar",
+      "btn2":"Guardar"
+    }
+
+  },
+  "FOOTER":{
+    "SECTION1":{
+      "title":"IE AGUAS NEGRAS",
+      
+      "item1":"",
+      "item2":""
+    },
+    "SECTION2":{
+      "title":"PRODUCTO",
+      "item1":"",
+      "item2":"Soporte tecnico"
+    },
+    "SECTION3":{
+      "title":"CONTACTO",
+      "item1":"",
+      "item2":"Cra. 1A #89-31, Monteria, Cordoba"
+    }
+  }
+}
