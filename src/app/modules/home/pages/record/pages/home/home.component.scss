@@ -60,4 +60,8 @@ color: variables.color(yellow);
   .mdc-text-field--filled:active{
   background-color: transparent!important;
   }
-
+.cont_chart{
+  width: 100%;
+  height: 400px;
+  background-color: variables.color(white);
+}

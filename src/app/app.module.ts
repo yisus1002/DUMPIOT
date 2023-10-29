@@ -10,6 +10,7 @@ import { NgxPermissionsModule } from 'ngx-permissions';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslationService } from './services/translate/translation.service';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { DatePipe } from '@angular/common';
 
 // Traduccion
 export function translationInitializer(translationService: TranslationService) {
@@ -52,7 +53,8 @@ export function translationInitializer(translationService: TranslationService) {
       useFactory: translationInitializer,
       deps: [TranslationService],
       multi: true
-    }
+    },
+    DatePipe
 
   ],
   // schemas: [NO_ERRORS_SCHEMA],

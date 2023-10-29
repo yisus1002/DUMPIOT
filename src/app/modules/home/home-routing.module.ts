@@ -27,6 +27,8 @@ const routes: Routes = [
   {
     path: 'profile',
     component: HomeComponent,
+    canActivate: [AuthGuard],
+    data: { permissions: { only: ['ADMIN', 'USER'], redirectTo: '/home' } },
     loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfileModule)
   },
   {
