@@ -1,1 +1,11 @@
-<p>Registro de activación</p>
+<div class="Activation">
+  <div class="Activation__container">
+    <div *ngIf="RecordActivation.length>0"  class="activation__chart" id="activation__chart">
+  </div>
+  <!-- <ng-template > -->
+    <div *ngIf="RecordActivation.length===0" class="alert__reg" >
+      {{"RECORD.inf.alert" | translate}}
+    </div>
+  <!-- </ng-template> -->
+
+</div>

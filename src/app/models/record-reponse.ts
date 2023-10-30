@@ -12,3 +12,9 @@ export interface Schedule {
   start_time: string;
   tipo:       string;
 }
+export interface Activation {
+  dia:   string;
+  fecha: string;
+  hora:  string;
+  id:    string;
+}

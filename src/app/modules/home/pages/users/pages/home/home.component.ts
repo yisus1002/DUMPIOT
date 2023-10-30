@@ -47,11 +47,11 @@ export class HomeComponent implements OnInit, AfterViewInit  {
     .pipe()
     .subscribe({
       next: (data)=>{
-        console.log(data);
+        // console.log(data);
         this._sctr.dataSource.data= data
       },
       error: (eer:any)=>{
-
+        this._sctr.showToastr_error(eer?.error?.msg);
       },
       complete: ()=>{
 

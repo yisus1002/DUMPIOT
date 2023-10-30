@@ -45,8 +45,8 @@ export class LoginComponent implements OnInit {
         controls.markAllAsTouched()
       })
     }else{
-      console.log(this.formu.value?.email);
-      console.log(this.formu.value?.password);
+      // console.log(this.formu.value?.email);
+      // console.log(this.formu.value?.password);
       this._sAuth.getToken(this.formu.value?.email, this.formu.value?.password);
     }
   }

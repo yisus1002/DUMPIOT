@@ -33,7 +33,7 @@ export class UsersService {
       ...user
     }
     delete userTmp?.id;
-    console.log(user.id);
+    // console.log(user.id);
 
     return this.http.put<any>(`${this.api}/users/${id}.json`,userTmp)
   }

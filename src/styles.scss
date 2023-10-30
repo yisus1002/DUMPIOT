@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @use 'assets/styles/root.scss';
 @use 'assets/styles/variables' as variables;
-
+@use "assets/styles/animation.scss" ;
 @font-face {
   font-family: myFont;
   src: url(./assets/font/digital-7.ttf);

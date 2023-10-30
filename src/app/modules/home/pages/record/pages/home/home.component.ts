@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone, OnDestroy } from '@angular/core';
 import { Record } from 'src/app/models/record-reponse';
 import { RecordService } from 'src/app/services/record.service';
 import { ControllerService } from '../../../../../../services/controllers/controller.service';
@@ -8,6 +8,7 @@ import * as am5xy from '@amcharts/amcharts5/xy';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { DatePipe } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 export const MY_DATE_FORMATS = {
   parse: {
@@ -29,54 +30,72 @@ export const MY_DATE_FORMATS = {
     DatePipe,
 ],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   panelOpenState = false;
   record:Record[]=[];
   recordTemp:Record[]=[];
   error:boolean=false;
+  subscription:Subscription=new Subscription();
   mostrar:boolean= true;
   public formu!:    FormGroup;
   constructor(
     private datePipe: DatePipe,
+    private zone: NgZone,
     private form     : FormBuilder,
     private _Srecord: RecordService,
     private _Sctr: ControllerService
     ){
     this._Sctr.leerRole()
-    this.getRecords()
+
   }
+
   ngOnInit(): void {
+    this.getRecords()
     this.createForm();
     let date = new Date();
     // console.log(date);
     this.loadFormu(date);
-
-
   }
-
-  getRecords(): Promise<any> {
-    return new Promise((resolve, reject) => {
-      this._Srecord.getrecord()
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+  getRecords() {
+    // return new Promise((resolve, reject) => {
+      this.zone.run(() => {
+        let sub= this._Srecord.getrecord()
         .subscribe({
           next: (data) => {
             this.record = data;
             this.recordTemp = data;
+            this.record.sort((a, b) => {
+              const dateA = new Date(a.update_date);
+              const dateB = new Date(b.update_date);
+
+              if (dateA > dateB) {
+                  return -1; // Ordenar de mayor a menor
+              } else if (dateA < dateB) {
+                  return 1;
+              }
+              return 0;
+          });
+          this.record=this.record.slice(0,10);
             // console.log(this.record);
-            this.loadChart(this.record);
+
+            this.loadChart(this.recordTemp);
 
             this.record.sort((a:any, b:any) => {
               const dateA = new Date(a.update_date.split('/').reverse().join('/')).getTime();
               const dateB = new Date(b.update_date.split('/').reverse().join('/')).getTime();
               return (dateB - dateA);
             });
-            resolve(data);
           },
           error: (err) => {
-            reject(err);
             this._Sctr.showToastr_error(err?.error?.msg);
           }
         });
-    });
+        this.subscription.add(sub);
+      });
+    // });
   }
   createForm(){
     this.formu= this.form.group({
@@ -223,7 +242,13 @@ export class HomeComponent implements OnInit {
     series.columns.template.events.on("pointerout", function (e) {
       handleOut();
     });
+    series.columns.template.adapters.add("fill", (fill, target) => {
+      return chart.get("colors")?.getIndex(series.columns.indexOf(target));
+    });
 
+    series.columns.template.adapters.add("stroke", (stroke, target) => {
+      return chart.get("colors")?.getIndex(series.columns.indexOf(target));
+    });
     function handleHover(dataItem:any) {
       if (dataItem && currentlyHovered != dataItem) {
         handleOut();
@@ -335,7 +360,8 @@ export class HomeComponent implements OnInit {
       paddingTop: 0,
       paddingBottom: 0
     }));
-
+    series.appear();
+    chart.appear(1000, 100);
   }
 
 }

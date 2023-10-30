@@ -60,9 +60,9 @@ export class HomeComponent implements OnInit, OnDestroy{
     allowOutsideClick: false,
     allowEscapeKey: false,
     allowEnterKey: false,
-  
+
   });
-  
+
       }
     })
 
@@ -136,7 +136,7 @@ export class HomeComponent implements OnInit, OnDestroy{
     this.isListening = true;
   };
   this.recognition.onend = () => {
-    console.log('hola');
+    // console.log('hola');
     this.isListening = false;
     if(!this.isListening){
       this.startRecognition();
@@ -146,7 +146,7 @@ export class HomeComponent implements OnInit, OnDestroy{
     let results = event.results;
     for (let i = event.resultIndex; i < results.length; i++) {
       let transcript = results[i][0].transcript.toLowerCase();
-      console.log(transcript);
+      // console.log(transcript);
 
       if (transcript.includes('tocar')) {
         this.tocarTimbre();
