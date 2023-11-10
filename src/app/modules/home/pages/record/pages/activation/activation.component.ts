@@ -22,6 +22,10 @@ export class ActivationComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.Subscription.unsubscribe();
   }
+  formatearFecha(fecha:any) {
+    let fechaAux = new Date(fecha);
+    return fechaAux.toLocaleDateString('es-CO', { day: '2-digit', month: '2-digit', year: 'numeric' });
+}
   ngOnInit(): void {
     this.zone.run(()=>{
 
@@ -30,6 +34,16 @@ export class ActivationComponent implements OnInit, OnDestroy {
       next:(data)=>{
 
         this.RecordActivation=data;
+        this.RecordActivation = this.RecordActivation.map((ele:any)=>{
+          return{
+            dia:   ele.dia,
+            fecha: this.formatearFecha(ele.fecha),
+            hora:  ele.hora,
+            id:    ele.id,
+          }
+        })
+        // console.log(this.RecordActivation);
+
         if(this.RecordActivation.length>0) {
           setTimeout(() => {
             this.loadChart(this.RecordActivation)
@@ -72,6 +86,8 @@ export class ActivationComponent implements OnInit, OnDestroy {
     return colorsDiccionario[dia];
   }
   loadChart(data:any){
+    // console.log(data);
+
     let root = am5.Root.new("activation__chart");
     root.dateFormatter.setAll({
       dateFormat: "yyyy-MM-dd HH:mm",
