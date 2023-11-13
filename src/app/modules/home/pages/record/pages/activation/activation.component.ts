@@ -43,10 +43,12 @@ export class ActivationComponent implements OnInit, OnDestroy {
           }
         })
         // console.log(this.RecordActivation);
+        let primerosDiezElementos = this.RecordActivation.slice(0, 10);
+        console.log(primerosDiezElementos);
 
         if(this.RecordActivation.length>0) {
           setTimeout(() => {
-            this.loadChart(this.RecordActivation)
+            this.loadChart(primerosDiezElementos)
           }, 500);
         }
         // console.log(this.RecordActivation);
@@ -124,7 +126,7 @@ export class ActivationComponent implements OnInit, OnDestroy {
         }
       }
     })
-    // console.log(data);
+    console.log(data);
 
 
 
