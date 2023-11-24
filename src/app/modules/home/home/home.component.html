@@ -14,7 +14,7 @@
     <mat-drawer [class.ocultar-drawer]="togg"  #drawer [mode]="mod" opened="true" class="sidenav" fixedInViewport="false">
       <app-navbar></app-navbar>
     </mat-drawer>
-    <mat-drawer-content [ngClass]="{ 'bounce-out-bottom': false }"    >
+    <mat-drawer-content class="drawer__content" [ngClass]="{ 'bounce-out-bottom': false }"    >
       <router-outlet></router-outlet>
       <app-footer></app-footer>
     </mat-drawer-content>

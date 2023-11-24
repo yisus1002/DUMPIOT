@@ -17,6 +17,22 @@
 .spacer {
   flex: 1 1 auto;
 }
+/* Add this to your global styles (styles.css or styles.scss) or in your component's styles */
+.drawer__content {
+  // min-height: 100vh; /* Ensure the content takes at least the full height of the viewport */
+  display: flex;
+  flex-direction: column;
+}
+
+.router-outlet {
+  flex: 1; /* This will make the router-outlet take the remaining vertical space */
+  overflow-y: auto;
+}
+
+app-footer {
+  margin-top: auto;
+}
+
 
 .main-div {
   display: grid;

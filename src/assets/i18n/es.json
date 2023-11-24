@@ -1,5 +1,5 @@
 {
-  "TITLE":" schoolsAlarmIOT",
+  "TITLE":" DumpIOT",
   "NABVAR":{
     "item1":"Inicio",
     "item2":"Control de usuarios",
@@ -10,7 +10,7 @@
   "LOGIN":{
     "title":"Bienvenido",
     "FORM":{
-      "title":"IE Aguas Negras",
+      "title":"IOT DUMP",
       "input1":"Ingrese su correo",
       "input2":"Ingrese su contraseña",
       "button":{
@@ -98,7 +98,7 @@
         "btn2":"Eliminar"
       }
     },
-    "ins":"IE Aguas Negras"
+    "ins":"IOT DUMP"
   },
   "FORM":{
     "title":"usuario",
@@ -118,8 +118,8 @@
   },
   "FOOTER":{
     "SECTION1":{
-      "title":"IE AGUAS NEGRAS",
-      
+      "title":"DUMP",
+
       "item1":"",
       "item2":""
     },
@@ -133,5 +133,8 @@
       "item1":"",
       "item2":"Cra. 1A #89-31, Monteria, Cordoba"
     }
+  },
+  "CHARTS":{
+    "title1":"Registro de actividad general"
   }
 }

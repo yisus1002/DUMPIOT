@@ -9,10 +9,10 @@ import { LoadingComponent } from './loading/loading.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { FormComponent } from './form/form.component';
-import { TableComponent } from './table/table.component';
 import { NgxPermissionsModule } from 'ngx-permissions';
 import { AvatarComponent } from './avatar/avatar.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { ChartRecordComponent } from './chart/chart-record/chart-record.component';
 // import { ToastrModule } from 'ngx-toastr';
 
 
@@ -22,8 +22,8 @@ import { TranslateModule } from '@ngx-translate/core';
     FooterComponent,
     LoadingComponent,
     FormComponent,
-    TableComponent,
-    AvatarComponent
+    AvatarComponent,
+    ChartRecordComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +39,7 @@ import { TranslateModule } from '@ngx-translate/core';
     FooterComponent,
     LoadingComponent,
     FormComponent,
-    TableComponent,
+    ChartRecordComponent,
     AvatarComponent,
     MaterialModule,
     ReactiveFormsModule,

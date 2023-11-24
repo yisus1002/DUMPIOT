@@ -1,20 +1,12 @@
 export interface Record {
-  id?:         string;
-  email:       string;
-  lastname:    string;
-  name:        string;
-  schedules:   Schedule[];
-  update_date: string;
-}
-
-export interface Schedule {
-  sonara:     number;
-  start_time: string;
-  tipo:       string;
-}
-export interface Activation {
-  dia:   string;
+  id?:any;
+  dia: string;
+  estado: string;
   fecha: string;
-  hora:  string;
-  id:    string;
+  hora_apertura: string;
+}
+export interface DatosProcesados {
+  dia: string;
+  datos: Record[];
+  contador: number;
 }

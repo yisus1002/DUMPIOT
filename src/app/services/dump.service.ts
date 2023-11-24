@@ -6,32 +6,32 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class ActivationService {
+export class dumpService {
   api:string=environment.API_KEY_BD;
 
   constructor(
     private http: HttpClient
   ) { }
 
-  getActivation():Observable<any>{
-    return this.http.get(`${this.api}/activation.json`)
+  getdump():Observable<any>{
+    return this.http.get(`${this.api}/dump.json`)
     .pipe(
       map((resp:any)=>{
         return this.createArray(resp);
       })
     );
   }
-  getActivationID(id:any):Observable<any>{
-    return this.http.get(`${this.api}/activation/${id}.json`)
+  getdumpID(id:any):Observable<any>{
+    return this.http.get(`${this.api}/dump/${id}.json`)
   }
-  DeletedActivationID(id:any):Observable<any>{
-    return this.http.delete(`${this.api}/activation/${id}.json`)
+  DeleteddumpID(id:any):Observable<any>{
+    return this.http.delete(`${this.api}/dump/${id}.json`)
   }
-  PostActivation(obj:any):Observable<any>{
-    return this.http.post(`${this.api}/activation.json`,obj);
+  Postdump(obj:any):Observable<any>{
+    return this.http.post(`${this.api}/dump.json`,obj);
   }
-  PutActivation(id:any,obj:any):Observable<any>{
-    return this.http.post(`${this.api}/activation/${id}.json`,obj);
+  Putdump(id:any,obj:any):Observable<any>{
+    return this.http.post(`${this.api}/dump/${id}.json`,obj);
   }
 
   private createArray(recordObj:any):any[] {
