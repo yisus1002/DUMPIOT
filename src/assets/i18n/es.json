@@ -135,6 +135,8 @@
     }
   },
   "CHARTS":{
-    "title1":"Registro de actividad general"
+    "title1":"Registro de actividad general",
+    "title2":"Registro detallado general",
+    "sindata":"No hay datos para mostrar"
   }
 }

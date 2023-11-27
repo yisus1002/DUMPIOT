@@ -3,11 +3,19 @@
 <h1 class="h1 title">{{"HOME.title" | translate}}</h1>
 <h2 class="h1 text text-center">{{"TITLE" | translate}}</h2>
   <div class="cont__lading" *ngIf="loading; else load">
-    <div class="cont__dashboard">
-      <div class="record">
-        <app-chart-record [data]="chartDataProcesada"></app-chart-record>
+    <div class="cont__dashboard" *ngIf="chartDataProcesada.length>0; else sindata">
+      <div class="record" >
+        <app-chart-record [data]="chartDataProcesada" ></app-chart-record>
+      </div>
+      <div class="record" >
+        <app-chart-record-category [data]="chartDataProcesada2"></app-chart-record-category>
       </div>
     </div>
+    <ng-template #sindata>
+      <div class="" >
+        <h2 class="text-center">{{"CHARTS.sindata" | translate}}</h2>
+      </div>
+    </ng-template>
 </div>
 </section>
 

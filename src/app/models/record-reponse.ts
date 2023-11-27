@@ -7,6 +7,6 @@ export interface Record {
 }
 export interface DatosProcesados {
   dia: string;
-  datos: Record[];
+  datos: any[];
   contador: number;
 }

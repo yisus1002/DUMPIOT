@@ -1,0 +1,10 @@
+
+@use '../../../../../assets/styles/variables' as variables;
+@use '../../../../../assets/styles/mixins' as mixins;
+
+#category {
+  margin: 0 auto;
+  width: 100%;
+  height: 400px;
+  // max-width: auto;
+}

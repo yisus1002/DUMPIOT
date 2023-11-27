@@ -18,6 +18,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   private Subscriptions:Subscription= new Subscription();
   chartData:Record[]=[];
   chartDataProcesada:DatosProcesados[]=[];
+  chartDataProcesada2:DatosProcesados[]=[];
+  count: number = 0;
   constructor(
     private ngZone:NgZone,
     private _SD:dumpService,
@@ -26,7 +28,13 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   }
   ngOnInit(): void {
+  //  setInterval(()=>{
     this.getchart();
+    setInterval(()=>{
+      
+    }, 5000);
+    // this.count++;
+  //  }, 5000)
   }
   ngOnDestroy(): void {
     this.ngZone.run(()=>{
@@ -37,6 +45,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   getchart(){
    this.ngZone.run(()=>{
     this.loading=false;
+    this.chartDataProcesada=[];
+    this.chartDataProcesada2=[];
    let sub= this._SD.getdump()
    .pipe(
     finalize(()=>{
@@ -46,20 +56,28 @@ export class HomeComponent implements OnInit, OnDestroy {
    .subscribe((res:Record[])=>{
 
     this.chartData=res;
-    this.chartDataProcesada=this.procesarDatos(res).sort();
- console.log(this.chartData);
+    this.chartDataProcesada=this.procesarDatos(res, "dia").sort();
+//  console.log(this.chartData);
  console.log(this.chartDataProcesada);
+ let dt:any = this.chartDataProcesada.forEach((el:DatosProcesados, i)=>{
+  let dato={
+    ...el
+  }
+  dato.datos=this.procesarDatos(el.datos, "estado");
+  this.chartDataProcesada2.push(dato);
+ });
 //  this.
+console.log(this.chartDataProcesada2);
 
 
    })
     this.Subscriptions.add(sub);
    });
   }
-   procesarDatos(datos: Record[]): DatosProcesados[] {
-    const datosUnicos: { [key: string]: { datos: Record[]; contador: number } } = {};
-    datos.forEach((dato) => {
-        const dia = dato.dia;
+   procesarDatos(datos: any, options?: any): DatosProcesados[] {
+    const datosUnicos: { [key: string]: { datos: any[]; contador: number } } = {};
+    datos.forEach((dato:any) => {
+        const dia = dato[options];
         if (!datosUnicos[dia]) {
             datosUnicos[dia] = {
                 datos: [dato],
@@ -92,5 +110,23 @@ export class HomeComponent implements OnInit, OnDestroy {
   return 0;
 }
 
-
+  getchart2(){
+   this.ngZone.run(()=>{
+    // this.chartDataProcesada=[];
+    this.chartDataProcesada2=[];
+    let sub= this._SD.getdump()
+   .subscribe((res:Record[])=>{
+    this.chartData=res;
+    this.chartDataProcesada=this.procesarDatos(res, "dia").sort();
+    let dt:any = this.chartDataProcesada.forEach((el:DatosProcesados, i)=>{
+      let dato={
+        ...el
+      }
+      dato.datos=this.procesarDatos(el.datos, "estado");
+      this.chartDataProcesada2.push(dato);
+    });
+  });
+  this.Subscriptions.add(sub);
+});
+}
 }

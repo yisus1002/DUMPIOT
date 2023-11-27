@@ -15,12 +15,10 @@ export class ChartRecordComponent implements OnInit {
 
   }
   ngOnInit(): void {
-    if(this.data){
-      // this.createchart(this.data);
-    }
+
   }
 ngOnChanges(changes: SimpleChanges): void {
-  if(changes['data']){
+  if(changes['data'].currentValue){
     this.createchart(changes['data'].currentValue);
   }
 }
@@ -91,8 +89,10 @@ ngOnChanges(changes: SimpleChanges): void {
 
 
 
+  //  setInterval(() => {
     yAxis.data.setAll(data);
     series.data.setAll(data);
+  //  }, 1000);
     sortCategoryAxis();
 
     // Get series item by category

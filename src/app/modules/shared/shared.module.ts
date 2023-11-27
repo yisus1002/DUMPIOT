@@ -13,6 +13,7 @@ import { NgxPermissionsModule } from 'ngx-permissions';
 import { AvatarComponent } from './avatar/avatar.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { ChartRecordComponent } from './chart/chart-record/chart-record.component';
+import { ChartRecordCategoryComponent } from './chart/chart-record-category/chart-record-category.component';
 // import { ToastrModule } from 'ngx-toastr';
 
 
@@ -23,7 +24,8 @@ import { ChartRecordComponent } from './chart/chart-record/chart-record.componen
     LoadingComponent,
     FormComponent,
     AvatarComponent,
-    ChartRecordComponent
+    ChartRecordComponent,
+    ChartRecordCategoryComponent
   ],
   imports: [
     CommonModule,
@@ -41,6 +43,7 @@ import { ChartRecordComponent } from './chart/chart-record/chart-record.componen
     FormComponent,
     ChartRecordComponent,
     AvatarComponent,
+    ChartRecordCategoryComponent,
     MaterialModule,
     ReactiveFormsModule,
     NgxMaterialTimepickerModule,
